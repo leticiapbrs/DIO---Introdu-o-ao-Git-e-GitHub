@@ -84,6 +84,8 @@ Como neste caso estamos trabalhando na Branch Master, vamos especifica-la como p
 
 ```
 git push -u origin master
+ou
+git push origin main
 ```
 
 
