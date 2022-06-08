@@ -1,5 +1,7 @@
 # Convencional Commits
 
+[TOC]
+
 
 
 ##  Porque utilizar Conventional Commits
@@ -11,7 +13,7 @@
 
 
 
-## A mensagem do commit deve ser estruturada da seguinte forma:
+## Estrutura da mensagem
 
 ```
 <tipo>[escopo opcional]: <descrição>

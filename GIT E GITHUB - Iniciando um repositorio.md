@@ -52,21 +52,63 @@ Quando executamos um Commit, estamos de fato, nos comprometendo com todas as mud
  		Neste momento, localmente está tudo pronto, e já podemos enviar nossas informações para o servidor.
 
 
-- **Alterando arquivos**
 
-  Após o commit, quando ocorrem alterações no arquivo e executamos *git status*, pode-se observar que há uma nova mudança para ser rastreada. Sendo necessário, o uso dos comandos novamente.
+#### **Alterando arquivos**
 
-- **Verificando alterações**
+Após o commit, quando ocorrem alterações no arquivo e executamos *git status*, pode-se observar que há uma nova mudança para ser rastreada. Sendo necessário, o uso dos comandos novamente.
 
-  Para verificar o histórico das alterações gravadas no repositório ou o acesso de uma versão específica podemos executar o comando git log.
+**Verificando alterações**
 
-- **Desfazendo commits**
+Para verificar o histórico das alterações gravadas no repositório ou o acesso de uma versão específica podemos executar o comando *git log*.
 
-  Em alguns momentos talvez seja necessário desfazer algum commit, por exemplo, se você fez um commit de uma coisa errada, que não era pra ter feito. 
+**Desfazendo commits**
 
-  * **$ git log** Esse comando irá mostrar o histórico de commits. Nesse histórico copie o código referente ao commit que quer desfazer. 
-  * **$ git revert codigodocommit.** Assim que executar esse comando abrirá um editor  para confirmar que quer reverter o commit e qual mensagem deseja que apareça nessa reversão. Com isso o commit será revertido.
-  * **$ git push origin master** Esse comando fará com que o revert apareça no histórico de commits no Github. 
+Em alguns momentos talvez seja necessário desfazer algum commit, por exemplo, se você fez um commit de uma coisa errada, que não era pra ter feito. 
+
+* **$ git log** Esse comando irá mostrar o histórico de commits. Nesse histórico copie o código referente ao commit que quer desfazer. 
+* **$ git revert codigodocommit.** Assim que executar esse comando abrirá um editor  para confirmar que quer reverter o commit e qual mensagem deseja que apareça nessa reversão. Com isso o commit será revertido.
+* **$ git push origin master** Esse comando fará com que este revert apareça no histórico de commits no Github. 
+
+
+
+**Outros códigos:**
+
+Para voltar o arquivo para antes da edição utilizamos o comando
+
+```
+git checkout nome_arquivo
+```
+
+Para ver as modificações em um arquivo utilizamos o comando
+
+```
+git diff nome_arquivo
+```
+
+Para voltar arquivos staged utilizamos o comando
+
+```
+git reset HEAD nome_arquivo
+```
+
+
+
+**Git reset**
+
+Para voltar arquivos que já estão em um commit utilizamos o comando.
+
+- git reset --**soft** id_commit_anterior - volta ao commit anterior mantendo as alterações em *staged* - antes do commit.
+
+- git reset --**mixed** id_commit_anterior - volta ao commit anterior em *modified*.
+- git reset --**hard** id_commit_anterior - remove todas as alterações, *unmodified*. todas as alterações são descartadas.
+
+
+
+**Diferença entre git revert e git reset**
+
+O **git revert** reverte as alterações de um commit antigo e cria um commit novo com os dados revertidos, ou seja, ele não modifica nenhum dos commits anteriores. O **git reset** modifica o histórico de commits, a fingir que um commit nunca aconteceu.
+
+------
 
 
 
@@ -104,3 +146,46 @@ Para baixar um projeto disponível no GitHub, utiliza-se o comando *git clone*.
 git clone [url]
 ```
 
+
+
+------
+
+#### Branches
+
+Branches criam uma linha alternativa para trabalharmos em um projeto paralelamente a sua linha original.
+
+- Para **criar uma nova branch** 
+
+```
+git branch nome_branch
+```
+
+- Para **alterar de branch** 
+
+```
+git checkout nome_branch
+```
+
+- Para **listar branches** existentes
+
+```
+git branch 
+```
+
+- Para **unir duas branches** 
+
+```
+git merge nome_branch
+```
+
+- Para **deletar uma branch**
+
+```
+git branch -d nome_branch
+```
+
+- Para **consultar commits** visualizando as ramificações
+
+```
+git log --graph
+```
