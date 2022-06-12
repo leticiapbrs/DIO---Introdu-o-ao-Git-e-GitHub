@@ -2,7 +2,7 @@
 
 
 
-Projeto realizado para a plataforma Dio, criação do primeiro portfólio no GitHub. O repositório possui as ferramentas básicas para a utilização do Git e GitHub, sendo dividido nos seguintes tópicos:
+Repositório para melhor entendimento e utilização das plataformas Git e GitHub, atualmente dividido em: instalação, comandos básicos, iniciando um repositório e convencional commits.
 
 * Instalação
   * O que é versionamento de código?
@@ -10,33 +10,41 @@ Projeto realizado para a plataforma Dio, criação do primeiro portfólio no Git
   * O que é GitHub?
   * Instalação do Git
   * Configuração
-  
+
 * Comandos básicos
 
 * Iniciando um repositório
   * Nomenclatura
-  
+
   * Criando um repositório
-  
+
   * Adicionando itens
-  
-  * Gravando itens no repositório (COMMIT)
-  
+
+  * Gravando arquivos no repositório (COMMIT)
+
+  * Alterando arquivos
+
+  * Desfazendo commits
+
   * Enviando arquivos
-  
+
   * Atualizando os arquivos locais
-  
+
   * Obtendo projetos do GitHub
-  
-    
 
-### Fontes utilizadas
+  * Branches
 
-[Git e GitHub - Instalação, Configuração e Primeiros Passos][https://balta.io/blog/git-github-primeiros-passos]
+  * Git checkout
 
-[O que é Git e GitHub, como usar e quais são as vantagens?][https://kenzie.com.br/blog/o-que-e-git/]
+  * Git stash
 
-[Controlando versões com Git e GitHub - Casa do Código][https://www.academia.edu/42653380/Controlando_verso_es_com_Git_e_GitHub_Casa_do_Codigo]
-
-[Curso Introdução ao Git ao GitHub][https://web.dio.me]
+* Convencional Commits
+  * Porque utilizar Conventional Commits
+  * Estrutura da mensagem
+  * Tipo
+  * Escopo opcional
+  * Descrição
+  * Corpo opcional
+  * Rodapé opcional
+  * Extras
 
