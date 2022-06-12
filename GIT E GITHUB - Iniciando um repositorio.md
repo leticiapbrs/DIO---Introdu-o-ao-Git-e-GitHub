@@ -10,6 +10,8 @@
 
 3. **Fork:** quando um profissional desenvolvedor precisa começar a trabalhar em um projeto, seu primeiro passo é copiar este repositório para a sua máquina. Este processo é realizado pelo comando **fork**. O fork também é uma funcionalidade útil quando um membro da equipe precisa pegar um código público para manuseá-lo em um editor de código local ou interno.
 
+------
+
 
 
 #### Criando um repositório
@@ -22,6 +24,8 @@ Ver situação dos arquivos no repositório Git
 
 - $ git status
 
+------
+
 
 
 #### Adicionando itens
@@ -32,6 +36,8 @@ Adiciona um arquivo à área de de preparação para que possa ser inserido em c
 - $ git add * ou git add . (adiciona todos os arquivos)
 
 Desta forma, informamos ao projeto os arquivos que estão sendo gerenciados pelo Git e que possivelmente vão para nosso servidor.
+
+------
 
 
 
@@ -51,6 +57,8 @@ Quando executamos um Commit, estamos de fato, nos comprometendo com todas as mud
 
  		Neste momento, localmente está tudo pronto, e já podemos enviar nossas informações para o servidor.
 
+------
+
 
 
 #### **Alterando arquivos**
@@ -61,37 +69,15 @@ Após o commit, quando ocorrem alterações no arquivo e executamos *git status*
 
 Para verificar o histórico das alterações gravadas no repositório ou o acesso de uma versão específica podemos executar o comando *git log*.
 
-**Desfazendo commits**
+#### **Desfazendo commits **
 
-Em alguns momentos talvez seja necessário desfazer algum commit, por exemplo, se você fez um commit de uma coisa errada, que não era pra ter feito. 
+**Git revert**
+
+Em alguns momentos talvez seja necessário desfazer algum commit, para isso podemos utilizar o comando git revert. 
 
 * **$ git log** Esse comando irá mostrar o histórico de commits. Nesse histórico copie o código referente ao commit que quer desfazer. 
-* **$ git revert codigodocommit.** Assim que executar esse comando abrirá um editor  para confirmar que quer reverter o commit e qual mensagem deseja que apareça nessa reversão. Com isso o commit será revertido.
+* **$ git revert codigo_commit.** Assim que executar esse comando abrirá um editor  para confirmar que quer reverter o commit e qual mensagem deseja que apareça nessa reversão. Com isso o commit será revertido mantendo o histórico.
 * **$ git push origin master** Esse comando fará com que este revert apareça no histórico de commits no Github. 
-
-
-
-**Outros códigos:**
-
-Para voltar o arquivo para antes da edição utilizamos o comando
-
-```
-git checkout nome_arquivo
-```
-
-Para ver as modificações em um arquivo utilizamos o comando
-
-```
-git diff nome_arquivo
-```
-
-Para voltar arquivos staged utilizamos o comando
-
-```
-git reset HEAD nome_arquivo
-```
-
-
 
 **Git reset**
 
@@ -104,9 +90,25 @@ Para voltar arquivos que já estão em um commit utilizamos o comando.
 
 
 
-**Diferença entre git revert e git reset**
+#### **Diferença entre git revert e git reset**
 
 O **git revert** reverte as alterações de um commit antigo e cria um commit novo com os dados revertidos, ou seja, ele não modifica nenhum dos commits anteriores. O **git reset** modifica o histórico de commits, a fingir que um commit nunca aconteceu.
+
+
+
+**Outros códigos:**
+
+Para ver as modificações em um arquivo utilizamos o comando
+
+```
+git diff nome_arquivo
+```
+
+Para voltar arquivos staged utilizamos o comando
+
+```
+git reset HEAD nome_arquivo
+```
 
 ------
 
@@ -189,3 +191,86 @@ git branch -d nome_branch
 ```
 git log --graph
 ```
+
+
+
+#### Diferenças entre git merge e git rebase
+
+O git merge e o git rebase possuem a mesma função: mesclar alterações de duas branches diferentes.
+
+O merge, na maioria das vezes, gera um novo commit, o que pode tornar o histórico mais confuso, mas nunca o reescreve.
+
+```
+git merge nome_branch
+```
+
+ Já o rebase, torna o histórico linear e simples, porém alguns commits são reescritos - função mais destrutiva. Modifica o histórico, coloca os commits em ordem cronológica, a alteração da estrutura impede a realizacao de um push, sendo possivel apenas forçadamente --force (não recomendado).
+
+```
+git rebase nome_branch
+```
+
+------
+
+
+
+#### Git checkout
+
+git checkout é uma forma de alternar entre versões de arquivos, commits ou branches. Existem diferentes formas de usar, mas seus dois principais usos são: trocar de branch ou restaurar arquivos.
+
+- Para **restaurar arquivos**
+
+```
+git checkout nome_arquivo
+```
+
+- Para **trocar de branch**
+
+```
+git checkout nome_branch
+```
+
+------
+
+
+
+#### Git stash
+
+O git stash arquiva as alterações feitas durante um determinado período, para que se possa trabalhar em outra coisa, depois voltar e fazer a alteração mais tarde. O stashing é útil quando é necessário alternar com rapidez o contexto e trabalhar em outra coisa, mas está no meio da alteração de código e não está pronto para fazer commit.
+
+- **Armazenar** uma alteração temporária
+
+```
+git stash
+git stash --include-untracked
+```
+
+- **Aplicar** uma alteração temporária
+
+```
+git stash apply
+```
+
+- **Listar** alterações temporárias
+
+```
+git stash list
+```
+
+- **Limpar** uma alteração temporária
+
+```
+git stash clear
+```
+
+
+
+#### .gitignore
+
+Nem todos os arquivos precisam ser enviados para o repositório remoto.
+
+
+#### Pull Request (ou PR)
+
+Utilizado para solicitar o merge de uma branch em outra branch no nosso repositório remoto.
+
