@@ -1,4 +1,4 @@
-# DIO - Introdução ao Git e GitHub
+# Introdução ao Git e GitHub
 
 
 
