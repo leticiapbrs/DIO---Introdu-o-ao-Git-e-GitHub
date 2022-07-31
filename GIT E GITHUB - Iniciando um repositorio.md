@@ -269,6 +269,21 @@ git stash clear
 
 Nem todos os arquivos precisam ser enviados para o repositório remoto.
 
+- Criar o arquivo .gitignore
+
+```
+vi .gitignore
+```
+
+O arquivo criado deve listar os arquivos ou pastas que o Git deve ignorar.
+
+- Sair da edição
+
+```
+ESQ :wq
+```
+
+
 
 #### Pull Request (ou PR)
 
